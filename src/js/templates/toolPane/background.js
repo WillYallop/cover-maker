@@ -3,12 +3,13 @@ import { storeMutation, storeRead } from '../../controllers/store';
 import axios from 'axios';
 import { createClient } from 'pexels';
 import { elementOptions } from '../../functions/elementConfigOptions';
-const client = createClient(process.env.PEXELS_API_KEY);
+
 const { cloneDeep } = require('lodash/fp/lang');
 
 export default class Background {
     constructor() {
         this.markup = Markup;
+        this.client = createClient(storeRead().variables.PEXELS_API_KEY);
         this.colors = [
             { name: 'red', color: '#D42628' },
             { name: 'orange', color: '#FE4F29' },
@@ -229,7 +230,7 @@ export default class Background {
     stockImages() {
         this.handleLoad(false);
         if(this.imageSearchInpEle.value) { 
-            client.photos.search({ query: this.imageSearchInpEle.value, per_page: 18 })
+            this.client.photos.search({ query: this.imageSearchInpEle.value, per_page: 18 })
             .then((res) => { 
                 this.imageResultsConEle.innerHTML = '';
                 this.photos = res.photos;

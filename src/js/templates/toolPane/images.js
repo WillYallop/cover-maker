@@ -1,12 +1,12 @@
 import Markup from './markup/images.html';
-import { storeMutation } from '../../controllers/store';
+import { storeMutation, storeRead } from '../../controllers/store';
 import axios from 'axios';
 import { createClient } from 'pexels';
-const client = createClient(process.env.PEXELS_API_KEY);
 
 export default class Text {
     constructor() {
         this.markup = Markup;
+        this.client = createClient(storeRead().variables.PEXELS_API_KEY);
     }
     // Initialise
     initialise() {
@@ -97,7 +97,7 @@ export default class Text {
     stockImages() {
         this.handleLoad(false);
         if(this.imageSearchInpEle.value) { 
-            client.photos.search({ query: this.imageSearchInpEle.value, per_page: 18 })
+            this.client.photos.search({ query: this.imageSearchInpEle.value, per_page: 18 })
             .then((res) => { 
                 this.imageResultsConEle.innerHTML = '';
                 this.photos = res.photos;

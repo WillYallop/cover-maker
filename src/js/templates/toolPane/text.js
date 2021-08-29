@@ -23,7 +23,7 @@ export default class Text {
                 if(templateID) {
                     let templateObj = this.textTemplates.find( x => x.id === parseInt(templateID));
                     if(templateObj) { 
-                        var file = await storeRead().getFilesCallback(`${process.env.API_URL}${templateObj.src}`);
+                        var file = await storeRead().getFilesCallback(`${storeRead().variables.API_URL}${templateObj.src}`);
                         storeMutation('addTextElements', file);
                     }
                 }
@@ -42,7 +42,7 @@ function renderTemplateCol(data, parent) {
         var template = `
             <div id="cm_textTemplateId${data.id}" class="templateCol" text-template-id="${data.id}">
                 <div class="innerTemplate"> 
-                    <img src="${process.env.API_URL}${data.img}" loading="lazy"> 
+                    <img src="${storeRead().variables.API_URL}${data.img}" loading="lazy"> 
                 </div>
             </div>`;
         document.getElementById(parent).insertAdjacentHTML('beforeend', template);

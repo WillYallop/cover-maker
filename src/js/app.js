@@ -17,9 +17,10 @@ import { initLoadController } from './controllers/load';
 import { storeRead, storeOn, storeMutation } from './controllers/store';
 const { cloneDeep } = require('lodash/fp/lang');
 
-export default class CoverMaker {
+export class CoverMaker {
     constructor(config) {
         this.config = config;
+        storeMutation('storeVariables', this.config.processVariables);
         // load
         this.loadConfig = {
             artificialLoadTime: 200,
@@ -62,7 +63,7 @@ export default class CoverMaker {
             if(templateID) {
                 let templateObj = this.config.templates.find( x => x.id === parseInt(templateID));
                 if(templateObj) { 
-                    var file = await this.config.getFilesFromURL(`${process.env.API_URL}${templateObj.src}`);
+                    var file = await this.config.getFilesFromURL(`${storeRead().variables.API_URL}${templateObj.src}`);
                     storeMutation('setArtboardData', cloneDeep(file));
                 }
             }

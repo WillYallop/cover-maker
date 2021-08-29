@@ -3,6 +3,7 @@
 import '@simonwep/pickr/dist/themes/nano.min.css';
 import Pickr from '@simonwep/pickr';
 import FontPicker from "font-picker";
+import { storeRead } from '../controllers/store';
 
 function elementOptions(config) {
     switch(config.type) {
@@ -109,7 +110,7 @@ function elementOptions(config) {
         // Handle font face
         case 'font-face': {
             // Font Face
-            new FontPicker(process.env.GOOGLE_FONTS_API_KEY, config.value, {  }, ((val) => {
+            new FontPicker(storeRead().variables.GOOGLE_FONTS_API_KEY, config.value, {  }, ((val) => {
                 config.update(val.family);
             }));
             break;

@@ -4,9 +4,7 @@ require("babel-polyfill");
 
 module.exports = {
     watch: true,
-    entry: {
-        index: ['babel-polyfill', './src/js/index.js']
-    },
+    entry: ['babel-polyfill', './src/js/app.js'],
     module: {
         rules: [
             {
@@ -48,6 +46,10 @@ module.exports = {
     output: {
         filename: '[name].bundle.js',
         path: path.resolve(__dirname, 'dist'),
-        clean: true
+        clean: true,
+        library: {
+            name: 'lib',
+            type: 'umd',
+        }
     }
 };

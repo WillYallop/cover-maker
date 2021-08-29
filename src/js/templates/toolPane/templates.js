@@ -46,7 +46,7 @@ export default class Templates {
                             if(templateID) {
                                 let templateObj = this.templates.find( x => x.id === parseInt(templateID));
                                 if(templateObj) { 
-                                    var file = await storeRead().getFilesCallback(`${process.env.API_URL}${templateObj.src}`);
+                                    var file = await storeRead().getFilesCallback(`${storeRead().variables.API_URL}${templateObj.src}`);
                                     storeMutation('setArtboardData', cloneDeep(file));
                                 }
                             }
@@ -68,7 +68,7 @@ export default class Templates {
                             if(templateID) {
                                 let templateObj = this.templates.find( x => x.id === parseInt(templateID));
                                 if(templateObj) { 
-                                    var file = await storeRead().getFilesCallback(`${process.env.API_URL}${templateObj.src}`);
+                                    var file = await storeRead().getFilesCallback(`${storeRead().variables.API_URL}${templateObj.src}`);
                                     storeMutation('setArtboardData', cloneDeep(file));
                                 }
                             }
@@ -90,7 +90,7 @@ export default class Templates {
                             if(templateID) {
                                 let templateObj = this.templates.find( x => x.id === parseInt(templateID));
                                 if(templateObj) { 
-                                    var file = await storeRead().getFilesCallback(`${process.env.API_URL}${templateObj.src}`);
+                                    var file = await storeRead().getFilesCallback(`${storeRead().variables.API_URL}${templateObj.src}`);
                                     storeMutation('setArtboardData', cloneDeep(file));
                                 }
                             }
@@ -127,7 +127,7 @@ function renderTemplateCol(data, parent) {
         var template = `
             <div id="cm_templateId${data.id}" class="templateCol" template-id="${data.id}">
                 <div class="innerTemplate"> 
-                    <img src="${process.env.API_URL}${data.img}" loading="lazy"> 
+                    <img src="${storeRead().variables.API_URL}${data.img}" loading="lazy"> 
                 </div>
                 <div class="titleOverlay">
                     <p>${data.name}</p> 

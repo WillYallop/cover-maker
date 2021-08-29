@@ -6,6 +6,7 @@ const version = '1.0.0';
 var state = {
     handlers: {}, 
     getFilesCallback: undefined,
+    variables: undefined,
     artboard: {
         version: version,
         backgroundColor: '#fff',
@@ -227,10 +228,16 @@ function storeMutation(mutation, data) {
             setArtboardBackground(state.artboard);
             break;
         }
-
         // Save config get files callback
         case 'getFilesCallbackURL': {
             state.getFilesCallback = data;
+            break;
+        }
+        // Store variables
+        case 'storeVariables': {
+            console.log(data);
+            state.variables = data;
+            break;
         }
     }
 }
