@@ -2,10 +2,14 @@
   "name": "cover-maker",
   "version": "1.0.0",
   "description": "An open source graphic design app for playlist cover art creation.",
-  "main": "index.js",
+  "main": "dist/index.bundle.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "webpack --mode=development",
+    "build": "webpack --mode=production"
   },
+  "files": [
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/WillYallop/cover-maker.git"
@@ -39,9 +43,22 @@
     "dotenv-webpack": "^7.0.3",
     "file-loader": "^6.2.0",
     "html-loader": "^2.1.2",
+    "process": "^0.11.10",
     "sass-loader": "^12.1.0",
     "style-loader": "^3.2.1",
     "webpack": "^5.51.1",
     "webpack-cli": "^4.8.0"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.4",
+    "@simonwep/pickr": "^1.8.1",
+    "axios": "^0.21.1",
+    "browser-image-compression": "^1.0.15",
+    "file-saver": "^2.0.5",
+    "font-picker": "^3.5.1",
+    "html-to-image": "^1.7.0",
+    "lodash": "^4.17.21",
+    "pexels": "^1.2.1",
+    "simplebar": "^5.3.5"
   }
 }

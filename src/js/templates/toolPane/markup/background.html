@@ -1,0 +1,90 @@
+<div class="toolPaneTemplateCon">
+    
+    <div class="header">
+        <h2>Background</h2>
+        <div class="nav">
+            <button class="active" related-body="cm_colorBackground">colors</button>
+            <button related-body="cm_gradientBackground">gradients</button>
+            <button related-body="cm_imageBackground">images</button>
+        </div>
+    </div>
+
+    <div id="cm_toolPaneBody" class="body">
+        <!-- Colors -->
+        <div id="cm_colorBackground" class="inner active">
+            <!-- Optipons -->
+            <div class="optionsRow">
+                <!-- Pick a color -->
+                <div class="section">
+                    <p class="rowTitle">Pick a color</p>
+                    <div class="backgroundColorPicker"></div>
+                </div>
+            </div>
+            <!-- Presets -->
+            <p class="rowTitle">Color presets</p>
+            <div id="cm_colorPresentBody" class="colorBackground">
+
+            </div>
+        </div>
+        <!-- Gradients -->
+        <div id="cm_gradientBackground" class="inner">
+            <!-- Optipons -->
+            <div class="optionsRow">
+                <!-- Pick a color -->
+                <div class="section colourGraidentPicker">
+                    <p class="rowTitle">Custom Gradient</p>
+                    <div class="colourPicker1">
+                        <div class="backgroundColorPicker1"></div>
+                    </div>
+                    <div class="colourPicker2">
+                        <div class="backgroundColorPicker2"></div>
+                    </div>
+                </div>
+                <!-- Gradient Angle -->
+                <div class="section">
+                    <p class="rowTitle">Gradient Angle: <span id="cm_gradientAngleText"></span></p>
+                    <input type="range" id="cm_gradientAngleInp" min="0" value="0" max="360">
+                </div>
+                <!-- Gradient Type -->
+                <div class="section">
+                    <p class="rowTitle">Gradient Type:</p>
+                    <div id="cm_gradientTypeOption" class="rowOptionsBtns">
+                        <button value="linear">Linear</button>
+                        <button value="radial">Radial</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Presets -->
+            <p class="rowTitle">Gradient presets</p>
+            <div id="cm_gradientPresentBody" class="colorBackground">
+
+            </div>
+        </div>
+        <!-- Images -->
+        <div id="cm_imageBackground" class="inner">
+            <p class="rowTitle">Upload an image</p>
+            <label class="uploadImageBtn" for="cm_uploadImage">
+                Upload Image
+                <input type="file" id="cm_uploadImage" style="display:none">
+            </label>
+            <div class="inputRow">
+                <p class="rowTitle">Search for images</p>
+                <div class="inputWrapper">
+                    <input id="cm_imageSearchInp" type="text" class="inputStyle" value="Background">
+                    <button id="cm_searchImgBtn"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21"><path d="M20.7 18.2l-4-4.1a1 1 0 00-.8-.3h-.6a8.5 8.5 0 10-1.5 1.5v.6a1 1 0 00.3.7l4 4.1a1 1 0 001.4 0l1.2-1.1a1 1 0 000-1.4zM8.5 13.8a5.2 5.2 0 115.3-5.3 5.2 5.2 0 01-5.3 5.3z" fill="#1bb855"/></svg></button>
+                </div>
+                <p class="plugP">Powered by Pexels</p>
+            </div>
+            <div id="cm_imageResultCon" class="imageResultCon">
+
+            </div>
+            <div id="cm_skeletonLoadingInd" class="imagesLoadingCon active">
+                <div class="skeletonBox">
+
+                </div>
+            </div>
+            <button id="cm_loadMoreImgsBtn" class="loadMoreBtn">Load More</button>
+        </div>
+    </div>
+
+</div>

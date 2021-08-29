@@ -1,0 +1,95 @@
+<!-- Navigation -->
+<div class="navigationCol">
+    <nav class="navCon" data-simplebar>
+        <ul>
+            <li><button class="active" options-template="templates" aria-label="templates"><i class="fas fa-th"></i></button></li>
+            <li><button options-template="images" aria-label="background"><i class="fas fa-images"></i></button></li>
+            <li><button options-template="shapes" aria-label="shapes"><i class="fas fa-shapes"></i></button></li>
+            <li><button options-template="background" aria-label="background"><i class="fas fa-brush"></i></button></li>
+            <li><button options-template="text" aria-label="text"><i class="fas fa-font"></i></button></li>
+        </ul>
+    </nav>
+    <div id="cm_toolPaneCon" class="toolPaneCon">
+        
+    </div>
+</div>
+<!-- Artboard Section -->
+<div class="artboardSectionOuter" >
+    <!-- Main Col -->
+    <div class="mainCol">
+
+        <div class="topBarCon">
+            <div class="section">
+                <button id="cm_saveBtn">Save</button>
+            </div>
+            <div class="section">
+                <button id="cm_loadBtn">Load</button>
+            </div>
+            <div class="section zoomSection">
+                <div class="wrapper">
+                    <input type="range" id="cm_artboardZoomInp" min="1" value="60" max="200">
+                    <p id="cm_artboardZoomText">60%</p>
+                </div>
+            </div>
+        </div>
+        
+        <div id="cm_artboardPageCon" class="artboardPageCon">
+            <div class="inner">
+    
+                <div class="wrapper">
+                    <div id="cm_artboardOuter" class="artboardOuter">
+                        <div id="cm_artboard" class="artboard">
+    
+                            <!-- Snapping points -->
+                            <div id="cm_snappingPointInd" class="snappingPointIndicatorCon">
+                                <div id="cm_snappingPointCenterY" class="snappPointCenterY"></div>
+                                <div id="cm_snappingPointCenterX" class="snappPointCenterX"></div>
+                            </div>
+    
+                        </div>  
+                    </div>
+                </div>
+    
+            </div>
+            <span class="scrollbarSquareArtifact"></span>
+        </div>
+    </div>
+    <!-- Side Col -->
+    <div class="sideCol" data-simplebar>
+
+        <!-- Layout -->
+        <div class="sectionCon">
+            <div class="sectionHeader">
+                <h3>Layout</h3>
+                <i class="fas fa-th-large"></i>
+            </div>
+            <div class="sectionBody layoutBody">
+                <button id="cm_alignSelectedYBtn" aria-label="Center selected by the y axis" class="layoutBtn"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"><g fill="none"><path d="M25 0v25H0V0z"/><g stroke="#3e3e3e" stroke-width="3" transform="translate(-1732.67 -120.5)"><rect width="22" height="22" rx="3" transform="translate(1734.17 122)"/><path d="M1734.17 133h21.04"/></g></g></svg></button>
+                <button id="cm_alignSelectedXBtn" aria-label="Center selected by the x axis" class="layoutBtn"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"><g fill="none"><path d="M25 0v25H0V0z"/><g stroke="#3e3e3e" stroke-width="3" transform="rotate(90 939.09 -793.59)"><rect width="22" height="22" rx="3" transform="translate(1734.17 122)"/><path d="M1734.17 133h21.04"/></g></g></svg></button>
+            </div>
+        </div>
+    
+        <!-- Layers --> 
+        <div class="sectionCon">
+            <div class="sectionHeader">
+                <h3>Layers</h3>
+                <i class="fas fa-layer-group"></i>
+            </div>
+            <div id="cm_layersBody" class="sectionBody layerBody">
+                <div class="noLayers">no layers</div>
+            </div>
+        </div>
+    
+        <!-- Edit Layer -->
+        <div id="cm_editLayerSection" class="sectionCon editLayerSection">
+            <div class="sectionHeader">
+                <h3>Edit Layer</h3>
+                <i class="fas fa-edit"></i>
+            </div>
+            <div id="cm_editLayerBody" class="sectionBody editLayerBody">
+                
+            </div>
+        </div>
+    
+    </div>
+</div>

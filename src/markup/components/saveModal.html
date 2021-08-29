@@ -1,0 +1,86 @@
+<div id="cm_saveModal" class="modalCon">
+    <div class="modalWrapper" data-simplebar>
+        <div class="modalInner">
+
+            <div class="modalContent">
+                <div class="mainCol">
+                    <div class="header">
+                        <h2>Save your playlist cover</h2>
+                        <p>Choose your preferred method of saving your creation. The JSON option will allow you to open up the same project in the future.</p>
+                    </div>
+                    <div id="cm_saveModalBody" class="body">
+                        
+                        <div class="row methodRow">
+                            <label for="cm_saveAsInp">Save As:</label>
+                            <input id="cm_saveAsInp" type="text" class="inputStyle" value="Playlist Cover">
+                            <label for="cm_methodInp">Method:</label>
+                            <div class="selectWrapper">
+                                <select id="cm_methodInp" type="text" class="inputStyle">
+                                    <option value="image">Image</option>
+                                    <option value="json">JSON</option>
+                                </select>
+                                <div class="selectArrows">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="5.57" height="3.38"><path d="M2.57.09L.1 2.57a.3.3 0 000 .43l.29.3a.3.3 0 00.43 0L2.8 1.32l1.97 1.96a.3.3 0 00.44 0l.28-.28a.3.3 0 000-.44L3 .1a.3.3 0 00-.43 0z" fill="#fff"/></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="5.57" height="3.38"><path d="M2.57 3.3L.1.8a.3.3 0 010-.43L.37.09a.3.3 0 01.44 0l1.98 1.96L4.76.1a.3.3 0 01.44 0l.28.29a.3.3 0 010 .43L3 3.3a.3.3 0 01-.43 0z" fill="#fff"/></svg>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Image Selected Options -->
+                        <div class="row altRow" save-row-type="image">
+                            <!-- Format Inp -->
+                            <label for="cm_formatInp">Format:</label>
+                            <div class="selectWrapper">
+                                <select id="cm_formatInp" type="text" class="inputStyle">
+                                    <option value="image/jpeg">JPEG</option>
+                                    <option value="image/png">PNG</option>
+                                </select>
+                                <div class="selectArrows">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="5.57" height="3.38"><path d="M2.57.09L.1 2.57a.3.3 0 000 .43l.29.3a.3.3 0 00.43 0L2.8 1.32l1.97 1.96a.3.3 0 00.44 0l.28-.28a.3.3 0 000-.44L3 .1a.3.3 0 00-.43 0z" fill="#fff"/></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="5.57" height="3.38"><path d="M2.57 3.3L.1.8a.3.3 0 010-.43L.37.09a.3.3 0 01.44 0l1.98 1.96L4.76.1a.3.3 0 01.44 0l.28.29a.3.3 0 010 .43L3 3.3a.3.3 0 01-.43 0z" fill="#fff"/></svg>
+                                </div>
+                            </div>
+                            <div class="infoBar">
+                                <p>Spotify only supports the JPEG file format!</p>
+                            </div>
+                            <!-- Quality -->
+                            <label for="cm_qualityInp">Quality:</label>
+                            <div class="sliderWrapper">
+                                <input type="range" id="cm_qualityInp" min="1" value="100" max="100">
+                                <p id="cm_qualityInpDisplay">100%</p>
+                            </div>
+                            <!-- Size Presets -->
+                            <label for="cm_sizePresetInp">Size Preset:</label>
+                            <div class="selectWrapper">
+                                <select id="cm_sizePresetInp" type="text" class="inputStyle">
+                                    <option value="300">Spotify (300x300)</option>
+                                    <option value="1400">Apple Music (1400x1400)</option>
+                                </select>
+                                <div class="selectArrows">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="5.57" height="3.38"><path d="M2.57.09L.1 2.57a.3.3 0 000 .43l.29.3a.3.3 0 00.43 0L2.8 1.32l1.97 1.96a.3.3 0 00.44 0l.28-.28a.3.3 0 000-.44L3 .1a.3.3 0 00-.43 0z" fill="#fff"/></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="5.57" height="3.38"><path d="M2.57 3.3L.1.8a.3.3 0 010-.43L.37.09a.3.3 0 01.44 0l1.98 1.96L4.76.1a.3.3 0 01.44 0l.28.29a.3.3 0 010 .43L3 3.3a.3.3 0 01-.43 0z" fill="#fff"/></svg>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- JSON Selected Options -->
+                        <!-- <div class="row altRow" save-row-type="json">
+                        </div> -->
+
+                    </div>
+                    <div class="footer">
+                        <button id="cm_exportImageBtn" class="saveBtn">Export</button>
+                        <button id="cm_closeModalBtn" class="closeBtn">Close</butto>
+                    </div>
+                </div>
+                <div id="cm_savePreviewCol" class="previewCol">
+                    
+                </div>
+                <div id="cm_savePreviewColLoadingInd" class="previewLoadingInd">
+
+                </div>
+            </div>
+    
+        </div>
+    </div>
+</div>

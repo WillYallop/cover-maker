@@ -13,15 +13,16 @@ function getConfg(url) {
     });
 }
 
-async function initialiseCoverMaker(templateURL, textTemplateURL) {
+async function initialiseCoverMaker(config) {
     try {
-        let templates = await getConfg(templateURL);
-        let textTemplates = await getConfg(textTemplateURL);
+        let templates = await getConfg(config.templateURL);
+        let textTemplates = await getConfg(config.textTemplateURL);
         const CoverMaker = new coverMaker({
             injectEleId: 'cm_inject',
             openTemplateFromURL: true,
-            templates:templates,
+            templates: templates,
             textTemplates: textTemplates,
+            processVariables: config.processVariables,
             getFilesFromURL: (url) => {
                 return getConfg(url);
             }
@@ -32,4 +33,5 @@ async function initialiseCoverMaker(templateURL, textTemplateURL) {
         console.error(err);
     }
 }
-initialiseCoverMaker('https://playlist-tools-api.herokuapp.com/cover-maker/free/templates/config.json', 'https://playlist-tools-api.herokuapp.com/cover-maker/free/textTemplates/config.json');
+
+export { initialiseCoverMaker };

@@ -5,7 +5,7 @@ require("babel-polyfill");
 module.exports = {
     watch: true,
     entry: {
-        index: ['babel-polyfill', './src/index.js']
+        index: ['babel-polyfill', './src/js/index.js']
     },
     module: {
         rules: [

@@ -1,0 +1,331 @@
+.modalCon {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba($color: #000000, $alpha: 0.8);
+    z-index: 1000;
+    .modalWrapper {
+        height: 100%;
+        width: 100%;
+        padding: 2rem;
+        .simplebar-content {
+            display: flex;
+            align-items: center;
+        }
+        .modalInner {
+            padding: 0 0 2rem;
+            margin: auto;
+
+            .modalContent {
+                width: 100%;
+                max-width: 100rem;
+                background-color: white;
+                border-radius: 1rem;
+                font-size: 1.6rem;
+                padding: 1.5rem;
+                position: relative;
+                .mainCol {
+                    width: calc(100% - 31.5rem);
+                    @media only screen and (max-width: 768px) {
+                        width: 100%;
+                    }
+                    &.fullWidth {
+                        width: 100%;
+                    }
+                    .header {
+                        border-bottom: 0.1rem solid #B4B4B4;
+                        padding-bottom: 1.5rem;
+                        margin-bottom: 1.5rem;
+                        h2 {
+                            font-size: 1.8rem;
+                            margin-bottom: 0.5rem;
+                        }
+                    }
+                    .body {
+                        .row {
+                            display: none;
+                            &.active {
+                                display: block;
+                            }
+                            &.methodRow {
+                                display: block;
+                            }
+                            &.altRow {
+                                border-top: 0.1rem solid #D6D6D6;
+                                margin-top: 0.5rem;
+                                padding-top: 1.5rem;
+                            }
+                            .inputStyle {
+                                margin-top: 1rem;
+                                margin-bottom: 1rem;
+                            }
+                            .infoBar {
+                                width: 100%;
+                                background-color: #F2F2F2;
+                                border-left: 0.2rem solid $error;
+                                padding: 1rem;
+                                font-size: 1.4rem;
+                                margin-bottom: 1rem;
+                                border-radius: 0 0.5rem 0.5rem 0;
+                            }
+                        }
+                        .selectWrapper {
+                            position: relative;
+                            .inputStyle {
+                                padding-right: 3.5rem;
+                            }
+                            .selectArrows {
+                                position: absolute;
+                                right: 1rem;
+                                top: 1.5rem;
+                                bottom: 1.5rem;
+                                width: 1.5rem;
+                                background-color: black;
+                                border-radius: 1rem;
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                                justify-content: space-around;
+                                pointer-events: none;
+                            }
+                        }
+                        .sliderWrapper {
+                            margin-bottom: 1rem;
+                            display: flex;
+                            align-items: center;
+                            p {
+                                margin-left: 1rem;
+                                min-width: 45px;
+                                text-align: right;
+                            }
+                            input {
+                                margin-top: 1rem;
+                                &::-webkit-slider-runnable-track {
+                                    background: #E1E1E1;
+                                }
+                            }
+                        }
+                    }
+                    .dropZone {
+                        width: 100%;
+                        height: 30rem;
+                        border: 0.2rem dashed #B4B4B4;
+                        background-color: #fff;
+                        border-radius: 1rem;
+                        transition: 0.3s;
+                        margin-bottom: 1rem;
+                        cursor: pointer;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        position: relative;
+                        &:hover {
+                            border: 0.2rem dashed $accent1;
+                            background-color: rgba($color: $accent1, $alpha: 0.1);
+                        }
+                        &.active {
+                            border: 0.2rem dashed $accent1;
+                            background-color: rgba($color: $accent1, $alpha: 0.1);
+                        }
+                        .inner {
+                            text-align: center;
+                            svg {
+                                path {
+                                    fill: $accent1;
+                                }
+                            }
+                            .title {
+                                font-size: 1.8rem;
+                                font-weight: bold;
+                                margin: 1.5rem 0 0.5rem;
+                                span {
+                                    color: $accent1;
+                                }
+                            }
+                            .body {
+                                color: #6E6E6E;
+                                font-size: 1.4rem;
+                            }
+                        }
+                        .loadingInner {
+                            position: absolute;
+                            top: 0.2rem;
+                            left: 0.2rem;
+                            right: 0.2rem;
+                            bottom: 0.2rem;
+                            border-radius: 0.8rem;
+                            align-items: center;
+                            justify-content: center;
+                            background-color: rgba($color: white, $alpha: 0.8);
+                            display: none;
+                            &.active {
+                                display: flex;
+                            }
+                            &::after {
+                                content: '';
+                                border: 0.5rem solid #151515;
+                                border-radius: 50%;
+                                border-top: 0.5rem solid $accent1;
+                                width: 4rem;
+                                height: 4rem;
+                                animation: spin 2s linear infinite;
+                            }
+                            @keyframes spin {
+                                0% { transform: rotate(0deg); }
+                                100% { transform: rotate(360deg); }
+                            }
+                        }
+                    }
+                    .uploadedFileRow {
+                        width: 100%;
+                        border: 0.1rem solid #CCCCCC;
+                        border-radius: 1rem;
+                        padding: 1.5rem;
+                        align-items: center;
+                        justify-content: space-between;
+                        margin-bottom: 1rem;
+                        display: none;
+                        &.active {
+                            display: flex;
+                        }
+                        .leftCol {
+                            display: flex;
+                            align-items: center;
+                            svg {
+                                path {
+                                    fill: $accent1;
+                                }
+                            }
+                            .name {
+                                font-size: 1.6rem;
+                                font-weight: bold;
+                                margin-left: 1rem;
+                            }
+                        }
+                        .removeBtn {
+                            cursor: pointer;
+                            &:hover {
+                                svg {
+                                    path {
+                                        fill: $error;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .errorRow  {
+                        width: 100%;
+                        border-radius: 1rem;
+                        padding: 1.5rem;
+                        background-color: $error;
+                        color: #fff;
+                        font-weight: bold;
+                        text-align: center;
+                        display: none;
+                        margin-bottom: 1rem;
+                        &.active {
+                            display: block;
+                        }
+                    }
+                    .footer {
+                        background-color: #F2F2F2;
+                        padding: 1.5rem;
+                        border-radius: 1rem;
+                        margin-top: 0.5rem;
+                        button {
+                            padding: 1rem 4rem;
+                            border: 0.2rem solid $accent1;
+                            border-radius: 2rem;
+                            margin-right: 1rem;
+                            transition: 0.3s;
+                            cursor: pointer;
+                            &:hover {
+                                background-color: lighten($accent1, 10%);
+                                border: 0.2rem solid lighten($accent1, 10%);
+                                color: #fff;
+                            }
+                        }
+                        .saveBtn {
+                            background-color: $accent1;
+                            color: #fff;
+                        }
+                        .closeBtn {
+                            margin-right: 0;
+                            color: rgb(20, 20, 20);
+                        }
+                        .openBtn {
+                            background-color: $accent1;
+                            color: #fff;
+                            &.disabled {
+                                opacity: 0.6;
+                            }
+                        }
+                    }
+                }
+                .previewCol {
+                    position: absolute;
+                    top: 1.5rem;
+                    right: 1.5rem;
+                    bottom: 1.5rem;
+                    width: 30rem;
+                    background-color: #F2F2F2;
+                    border-radius: 1rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 1rem;
+                    img {
+                        width: 80%;
+                        max-width: 30rem;
+                    }
+                    @media only screen and (max-width: 768px) {
+                        position: relative;
+                        width: 100%;
+                        top: auto;
+                        left: auto;
+                        right: auto;
+                        bottom: auto;
+                        margin-top: 1.5rem;
+                    }
+                }
+                .previewLoadingInd {
+                    position: absolute;
+                    top: 1.5rem;
+                    right: 1.5rem;
+                    bottom: 1.5rem;
+                    width: 30rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    z-index: 10;
+                    @media only screen and (max-width: 768px) {
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        width: auto;
+                        background-color: rgba(0, 0, 0, 0.6);
+                    }
+                    &.hide {
+                        display: none;
+                    }
+                    &::after {
+                        content: '';
+                        border: 0.5rem solid #151515;
+                        border-radius: 50%;
+                        border-top: 0.5rem solid $accent1;
+                        width: 4rem;
+                        height: 4rem;
+                        animation: spin 2s linear infinite;
+                    }
+                    @keyframes spin {
+                        0% { transform: rotate(0deg); }
+                        100% { transform: rotate(360deg); }
+                    }
+                }
+            }
+        }
+    }
+}

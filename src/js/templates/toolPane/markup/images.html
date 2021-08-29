@@ -1,0 +1,38 @@
+<div class="toolPaneTemplateCon">
+
+    <div class="header">
+        <h2>Images</h2>
+    </div>
+
+    <div id="cm_toolPaneBody" class="body imagesToolBody">
+        <div class="section">
+
+            <p class="rowTitle">Upload an image</p>
+            <label class="uploadImageBtn" for="cm_uploadImage">
+                Upload Image
+                <input type="file" id="cm_uploadImage" style="display:none">
+            </label>
+     
+            <div class="inputRow">
+                <p class="rowTitle">Search for images</p>
+                <div class="inputWrapper">
+                    <input id="cm_imageSearchInp" type="text" class="inputStyle" value="Abstract">
+                    <button id="cm_searchImgBtn"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21"><path d="M20.7 18.2l-4-4.1a1 1 0 00-.8-.3h-.6a8.5 8.5 0 10-1.5 1.5v.6a1 1 0 00.3.7l4 4.1a1 1 0 001.4 0l1.2-1.1a1 1 0 000-1.4zM8.5 13.8a5.2 5.2 0 115.3-5.3 5.2 5.2 0 01-5.3 5.3z" fill="#1bb855"/></svg></button>
+                </div>
+                <p class="plugP">Powered by Pexels</p>
+            </div>
+
+            <div id="cm_imageResultCon" class="imageResultCon">
+
+            </div>
+            <div id="cm_skeletonLoadingInd" class="imagesLoadingCon active">
+                <div class="skeletonBox">
+
+                </div>
+            </div>
+            <button id="cm_loadMoreImgsBtn" class="loadMoreBtn">Load More</button>
+
+        </div>
+    </div>
+
+</div>

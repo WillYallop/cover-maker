@@ -1,0 +1,229 @@
+@import '_settings', "./components/navigationSection", "./components/artboardSection", "./components/modal";
+
+html, body { 
+    height:100%; 
+    background-color: $background;
+    // background-color: red;
+    font-size: 62.5%;
+    font-family: 'Lato', sans-serif !important;
+    -webkit-tap-highlight-color: transparent;
+}
+* {
+    box-sizing: border-box;
+    margin:0; 
+    padding:0; 
+}
+*:focus {
+    outline: none;
+}
+// tooltip
+.sizeTooltipCon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #151515;
+    padding: 0.5rem;
+    color: #DDDDDD;
+    pointer-events: none;
+    font-size: 1.4rem;
+    border-radius: 0.5rem;
+}
+button {
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font-size: 1.6rem;
+    transition: 0.3s;
+    font-family: 'Lato', sans-serif;
+}
+
+.headerCon {
+    width: 100%;
+    height: 6rem;
+    background-color: $accent1;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    a {
+        font-size: 1.6rem;
+        color: #fff;
+        text-decoration: none;
+        svg {
+            margin-right: 1rem;
+        }
+    }
+    button {
+        padding: 1rem 4rem;
+        background-color: #fff;
+        border-radius: 2rem;
+    }
+}
+
+.editorBodyContainer {
+    width: 100%;
+    height: calc(100% - 6rem);
+    display: flex;
+    position: relative;
+    // Navigation Section
+    .navigationCol {
+        width: 41rem;
+        height: 100%;
+        max-height: 100%;
+        display: flex;
+    }
+    // Artboard Section
+    .artboardSectionOuter {
+        width: calc(100% - 41rem);
+        min-height: 100%;
+        padding: 0.5rem;
+        display: flex;
+    }
+    .simplebar-wrapper {
+        max-height: 100%;
+        .simplebar-content {
+            height: 100%;
+        }
+    }
+    // Loading
+    .loadingIndCon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1000;
+        overflow: hidden;
+        pointer-events: none;
+        .topHalf {
+            position: absolute;
+            top: -60%;
+            left: 0;
+            right: 0;
+            height: 50%;
+            background-color: #fff;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            transition: 0.3s;
+            .spinnerCon {
+                width: 10rem;
+                height: 10rem;
+                margin-bottom: -5rem;
+                background-color: $accent1;
+                border-radius: 50%;
+                z-index: 10;
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 4rem;
+                color: #fff;
+                animation-name: spin;
+                animation-duration: 2s;
+                animation-iteration-count: infinite;
+                animation-timing-function: linear; 
+                @keyframes spin {
+                    from {
+                        transform:rotate(0deg);
+                    }
+                    to {
+                        transform:rotate(360deg);
+                    }
+                }
+            }
+        }
+        .bottomHalf {
+            position: absolute;
+            bottom: -60%;
+            left: 0;
+            right: 0;
+            height: 50%;
+            background-color: rgb(245, 245, 245);
+            transition: 0.3s;
+        }
+        &.active {
+            .topHalf {
+                top: 0;
+            }
+            .bottomHalf {
+                bottom: 0;
+            }
+        }
+    }
+}
+.pickr .pcr-button {
+    width: 100% !important;
+    height: 3rem !important;
+    border-radius: 0.5rem !important;
+    overflow: hidden;
+    box-shadow:none !important;
+}
+.pcr-app[data-theme=nano] {
+    font-size: 16px;
+}
+
+.inputStyle {
+    width: 100%;
+    height: 4rem;
+    background-color: #F8F8F8;
+    border: 0.1rem solid #D6D6D6;
+    border-radius: 0.5rem;
+    padding: 0 1rem;
+    appearance: none;
+    font-size: 1.6rem;
+}
+
+input[type=range] {
+    width: 100%;
+    margin: 0.5rem 0;
+    background-color: transparent;
+    -webkit-appearance: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+    background: #A0A4A6;
+    border: 0;
+    width: 100%;
+    height: 1rem;
+    cursor: pointer;
+    border-radius: 2rem;
+}
+input[type=range]::-webkit-slider-thumb {
+    margin-top: -0.5rem;
+    width: 2rem;
+    height: 2rem;
+    background: #ffffff;
+    border: 0.1rem solid #2C2C2C;
+    border-radius: 50%;
+    cursor: pointer;
+    -webkit-appearance: none;
+}
+
+
+
+.skeletonBox {
+    display: inline-block;
+    height: 1em;
+    position: relative;
+    overflow: hidden;
+    background-color: $tool-pane-btn-background;
+    height: 100%;
+    width: 100%;
+}
+.skeletonBox::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateX(-100%);
+    background-image: linear-gradient(90deg, rgba($color: $nav-background-1, $alpha: 0) 0, rgba($color: $nav-background-1, $alpha: 0.2) 20%, rgba($color: $nav-background-1, $alpha: 0.5) 60%, rgba($color: $nav-background-1, $alpha: 0));
+    animation: shimmer 2s infinite;
+    content: "";
+}
+@keyframes shimmer {
+100% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+}
+}

@@ -1,0 +1,41 @@
+<div id="cm_loadModal" class="modalCon">
+    <div class="modalWrapper" data-simplebar>
+        <div class="modalInner">
+
+            <div class="modalContent">
+                <div class="mainCol fullWidth">
+                    <div class="header">
+                        <h2>Load a file!</h2>
+                        <p>Upload your saved playlist file by dragging into the box bellow or by clicking it.</p>
+                    </div>
+                    <div id="cm_dropZone" class="dropZone">
+                        <div class="inner">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="53.3"><path d="M23.3 14.2V0H2.5A2.5 2.5 0 000 2.5v48.3a2.5 2.5 0 002.5 2.5h35a2.5 2.5 0 002.5-2.5V16.7H25.8a2.5 2.5 0 01-2.5-2.5zm6.8 22.5h-6.8V45a1.7 1.7 0 01-1.6 1.7h-3.4a1.7 1.7 0 01-1.6-1.7v-8.3H9.9a1.7 1.7 0 01-1.2-2.9l10-10a1.8 1.8 0 012.5 0l10 10a1.7 1.7 0 01-1 2.9zm9.2-25.8L29 .7a2.5 2.5 0 00-1.8-.7h-.6v13.3H40v-.6a2.5 2.5 0 00-.7-1.8z" fill="#762cf8"/></svg>
+                            <p class="title">Drop your save file here, or <span>browse</span></p>
+                            <p class="body">Supports JSON only</p>
+                        </div>
+                        <div id="cm_fileUploadingCon" class="loadingInner">
+
+                        </div>
+                    </div>
+                    <input id="cm_fileUploadInp" type="file" style="display: none;"/>
+                    <div id="cm_uploadedFileRow" class="uploadedFileRow">
+                        <div class="leftCol">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="26.7"><path d="M11.7 7V0H1.3A1.2 1.2 0 000 1.3v24.1a1.2 1.2 0 001.3 1.3h17.4a1.2 1.2 0 001.3-1.3v-17h-7A1.3 1.3 0 0111.6 7zm8.3-.7v.4h-6.7V0h.4a1.2 1.2 0 01.8.4l5.1 5a1.2 1.2 0 01.4 1z" fill="#762cf8"/></svg>
+                            <p id="cm_fileName" class="name">File</p>
+                        </div>
+                        <button id="cm_removeFileBtn" class="removeBtn"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"><path d="M10.3 7.5l4.3-4.3a1.3 1.3 0 000-1.9l-1-1a1.3 1.3 0 00-1.8 0L7.5 4.8 3.2.4a1.3 1.3 0 00-1.9 0l-1 1a1.3 1.3 0 000 1.8l4.4 4.3-4.3 4.3a1.3 1.3 0 000 1.9l1 1a1.3 1.3 0 001.8 0l4.3-4.4 4.3 4.3a1.3 1.3 0 001.9 0l1-1a1.3 1.3 0 000-1.8z" fill="#797979"/></svg></button>
+                    </div>
+                    <div id="cm_errorRow" class="errorRow">
+                        
+                    </div>
+                    <div class="footer">
+                        <button id="cm_openFileBtn" class="openBtn disabled">Open</button>
+                        <button id="cm_closeModalBtn" class="closeBtn">Close</butto>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+    </div>
+</div>
