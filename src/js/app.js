@@ -17,7 +17,7 @@ import { initLoadController } from './controllers/load';
 import { storeRead, storeOn, storeMutation } from './controllers/store';
 const { cloneDeep } = require('lodash/fp/lang');
 
-export class CoverMaker {
+export class Create {
     constructor(config) {
         this.config = config;
         storeMutation('storeVariables', this.config.processVariables);

@@ -48,7 +48,7 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         clean: true,
         library: {
-            name: 'lib',
+            name: 'coverMaker',
             type: 'umd',
         }
     }
