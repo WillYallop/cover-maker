@@ -235,7 +235,6 @@ function storeMutation(mutation, data) {
         }
         // Store variables
         case 'storeVariables': {
-            console.log(data);
             state.variables = data;
             break;
         }
