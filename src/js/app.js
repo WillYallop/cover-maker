@@ -38,6 +38,7 @@ export class Create {
             var loadingCon = document.getElementById('cm_loadingCon');
             loadingCon.classList.remove('active');
             // Inject markup & icons
+            document.getElementById(this.config.injectEleId).classList.add('editorBodyContainer');
             document.getElementById(this.config.injectEleId).insertAdjacentHTML('afterbegin', markup);
             dom.i2svg();
             this.initialise();
