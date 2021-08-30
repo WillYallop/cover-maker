@@ -1,6 +1,6 @@
 {
   "name": "@williamyallop/cover-maker",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An open source graphic design app for playlist cover art creation.",
   "main": "dist/main.bundle.js",
   "scripts": {
